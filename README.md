@@ -34,13 +34,17 @@ AI builds **enterprise-class systems** — from one prompt or your existing data
 ## 🤖 AI Assistance
 
 <details markdown>
-<summary>First select your AI assistant, then paste the prompt below</summary>
+<summary>Why: pins the model to Claude Sonnet 5 and pre-loads instructions</summary>
 
 &nbsp;
 
-We get consistently good results with **Claude Sonnet 5.0/4.6** (GitHub Copilot or Claude Code extension). "Ask" mode will not work — use **Agent mode**.
+This workspace ships a custom **ProjectStudio** agent — it pins the model to **Claude Sonnet 5** (best results) and pre-loads the project's instructions automatically, no extra step needed. "Ask" mode will not work — ProjectStudio needs to create files and run commands.
 
-To select Sonnet 5.0 in the Copilot chat panel: click **Agent** → the **gear icon** → choose **Claude Sonnet 5.0**.
+Don't see **ProjectStudio** in the dropdown? Use **Agent** mode instead, then paste:
+
+```
+Please load `.github/copilot-instructions.md`.
+```
 
 For more information, see [AI-Enabled Projects](https://apilogicserver.github.io/Docs/Project-AI-Enabled/) or [click here](https://apilogicserver.github.io/Docs/Manager-readme/).
 
@@ -48,9 +52,10 @@ For more information, see [AI-Enabled Projects](https://apilogicserver.github.io
 
 &nbsp;
 
-```
-Please load `.github/.copilot-instructions.md`.
-```
+**Select the ProjectStudio agent** from the dropdown at the bottom of the Copilot Chat panel (where Ask / Edit / Agent live):
+
+![select the ProjectStudio agent](docs/images/select-projectstudio-agent.png)
+<!-- TODO(Val): replace with a real screenshot of the agent dropdown showing "ProjectStudio" selected -->
 
 &nbsp;
 
