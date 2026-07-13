@@ -99,12 +99,7 @@ On Placing Orders, Check Credit
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;AI-driven rules are easy to Read, Trust, and Maintain — here's how</summary>
-
-&nbsp;
-
-<details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;1. Declare it — the prompt above is governing logic, not documentation</summary>
+<summary>&emsp;&emsp;1. Declare it — the prompt above is governing logic, not documentation</summary>
 
 <br>The prompt above didn't just describe a database — the "Check Credit" block is **governing logic**, not documentation. Left unguided, an AI assistant would default to procedural code for rules like these — readable at 5 rules, but every future change means re-checking every code path by hand, and that stops scaling long before a real system's requirement count does. Declarative rules avoid that: they're specifications the engine enforces automatically, not procedure you maintain.
 
@@ -115,7 +110,7 @@ That's what you just declared. Next: run it, and see it enforced.
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;2. Run it — see the API and logic operate</summary>
+<summary>&emsp;&emsp;2. Run it — see the API and logic operate</summary>
 
 <br>You've probably used AI to generate code before — so what's different here?
 
@@ -139,7 +134,7 @@ Change the quantity to a very large number. Save.
 ```
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Detail Instructions -- Screen Shots</summary>
+<summary>&emsp;&emsp;&emsp;&emsp;Detail Instructions -- Screen Shots</summary>
 
 <br>Alter the quantity for an *unshipped* item:
 
@@ -162,7 +157,7 @@ The save fails — note the dialog. Why? Let's look.
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;3. Debug it — standard logging, standard debugger</summary>
+<summary>&emsp;&emsp;3. Debug it — standard logging, standard debugger</summary>
 
 <br>No new tools required. The rule chain that just fired is written to the standard log — plain text, readable in your terminal or editor: `logs/als.log`.
 
@@ -175,7 +170,7 @@ Every rule is a plain Python function or lambda. Set a breakpoint on any `callin
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;4. Iterate — 1 AI prompt adds table, relationship, 2 rules</summary>
+<summary>&emsp;&emsp;4. Iterate — 1 AI prompt adds table, relationship, 2 rules</summary>
 
 <br>Ask your AI assistant for a new rule, in plain English:
 
@@ -192,7 +187,7 @@ Without the engine, an AI rewriting procedural code from scratch would have to r
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;5. Why rules are easy to Read, Trust, and Maintain</summary>
+<summary>&emsp;&emsp;5. Why rules are easy to Read, Trust, and Maintain</summary>
 
 <br>Iteration above worked the way it did because rules are **declarative**, not procedural. A quick debrief on what you just saw, then the full picture of why that matters at any scale.
 
@@ -227,7 +222,7 @@ That's why order didn't matter — the engine computes it, not your source file 
 > With procedural code, even if you find the right passage — how do you know it's called for *every* transaction source? API, MCP, agent, Kafka, a future caller you haven't written yet? With thousands of code paths, you can't know. That's not a testing gap; it's a representation problem. Rules solve it structurally — declared once, fired at one commit point, from every caller, with no bypass possible. The 40x reduction in code isn't the point. The verifiable coverage is: ***you can read the rules, and trust they are being enforced. Always.***
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;How this works: Context Engineering (CE) + a commit-time rules engine</summary>
+<summary>&emsp;&emsp;&emsp;&emsp;How this works: Context Engineering (CE) + a commit-time rules engine</summary>
 
 <br>Two things have to be true for this to work:
 
@@ -248,7 +243,7 @@ That's why order didn't matter — the engine computes it, not your source file 
   More background: [Eval Guide](https://apilogicserver.github.io/Docs/Eval/).
 
   <details markdown>
-  <summary>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The AI was trained on this material — can you trust its answers?</summary>
+  <summary>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The AI was trained on this material — can you trust its answers?</summary>
 
   <br>Don't take them on faith. Ask the same question a different way, or ask something not covered here — like where this architecture breaks down. If it just recites the same lines back, you've caught it. If it reasons, that's the test passing.
 
@@ -263,8 +258,6 @@ Put together: once the AI knows how the system works, it doesn't just generate r
 <br>
 
 Full writeup: [declarative/procedural comparison](samples/basic_demo_logic_gov/logic/procedural/declarative-vs-procedural-comparison.md).
-
-</details>
 
 </details>
 
