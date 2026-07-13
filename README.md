@@ -195,13 +195,15 @@ Without the engine, an AI rewriting procedural code from scratch would have to r
 
 | Property | What it means | Why it matters |
 |---|---|---|
-| **Readable** | 5 lines, one per requirement — declared once, e.g. `Customer.balance = sum of unpaid orders` | No archaeology needed to see what it does |
+| **Readable** | 5 lines, one per requirement — see them in [`logic/logic_discovery/place_order/check_credit.py`](samples/basic_demo_sample/logic/logic_discovery/place_order/check_credit.py), e.g. `Customer.balance = sum of unpaid orders` — the same requirements run ~200 lines written procedurally | No archaeology needed to see what it does |
 | **Trustworthy** | Rules fire at every commit, from every caller — you never call them | Can't be forgotten, can't be bypassed |
 | **Maintainable** | Dependency order is computed once, automatically | Add a rule anywhere, it finds its place |
 
 > Think of a **spreadsheet:** `B10 = SUM(B1:B9)` isn't called, it *reacts* — change any input cell, it recalculates. Rules react the same way to changes in what they depend on.
 
-Don't take that on faith — an AI was asked to rebuild this same logic without the rule engine, procedurally. It shipped real bugs. See them: [declarative vs. procedural comparison](samples/basic_demo_sample/logic/procedural/declarative-vs-procedural-comparison.md).
+> **Ask your AI assistant, not just to build.** It knows this material too — try *"Tell me more about rules"* or *"How does this work?"* Same AI, same context, now explaining instead of generating.
+
+Don't take any of this on faith — an AI was asked to rebuild this same logic without the rule engine, procedurally. It shipped real bugs. See them: [declarative vs. procedural comparison](samples/basic_demo_sample/logic/procedural/declarative-vs-procedural-comparison.md) — ~200 lines, compared line-for-line with the 5 rules above.
 
 </details>
 
