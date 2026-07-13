@@ -38,7 +38,7 @@ AI builds **enterprise-class systems** — from one prompt or your existing data
 
 &nbsp;
 
-This workspace ships a custom **ProjectStudio** agent — it pins the model to **Claude Sonnet 5** (best results) and pre-loads the project's instructions automatically, no extra step needed. "Ask" mode will not work — ProjectStudio needs to create files and run commands.
+This workspace ships a custom **ProjectStudio** agent — it prefers **Claude Sonnet 5** (falling back automatically to 4.6, then 4.5, if 5 isn't on your plan yet) and pre-loads the project's instructions automatically, no extra step needed. "Ask" mode will not work — ProjectStudio needs to create files and run commands.
 
 Don't see **ProjectStudio** in the dropdown? Use **Agent** mode instead, then paste:
 
