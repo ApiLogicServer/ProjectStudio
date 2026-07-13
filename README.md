@@ -68,7 +68,6 @@ For more information, see [AI-Enabled Projects](https://apilogicserver.github.io
 
 ## 🚀 First Time Here?
 <!-- CODESPACES-INSERT-POINT: create_codespaces_mgr.py injects browser note here — do not rename this heading -->
-&nbsp;
 
 You're already running in GitHub Codespaces — a cloud VS Code environment in your browser. Nothing to install. (Use Chrome or Edge — Safari has known compatibility issues with VS Code in the browser.)
 
