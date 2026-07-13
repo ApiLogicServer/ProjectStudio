@@ -191,25 +191,7 @@ Without the engine, an AI rewriting procedural code from scratch would have to r
 <details markdown>
 <summary>&emsp;&emsp;5. Why rules are easy to Read, Trust, and Maintain</summary>
 
-<br>Iteration above worked the way it did because rules are **declarative**, not procedural. A quick debrief on what you just saw, then the full picture of why that matters at any scale.
-
-**What you just saw:**
-
-- **No need to call the new logic.** Rules are invoked automatically - regardless of the originating path.  You can **trust** that they'll always run.
-- **Order doesn't matter.** Open `check_credit.py` and shuffle the five rules into any order you like. Rerun — still correct. Try that with 200 lines of procedural code.  You can **trust** that they'll run in the right order.
-- **You got more than you asked for.** The original requirement said *"On Placing Orders, Check Credit"* — insert time. But the save that failed was an *edit* to an existing order. Nobody wrote an update-time check.
-
-Functions don't behave like that. So why is that?
-
-> **Traditional logic is procedural** — you own *how*: when it's called, and in what order. **Declarative logic — rules** — is about *what*, not how: you state the fact, and the system takes responsibility for invocation and ordering. That's why the new rule didn't need to be called, and why order didn't matter.
-
-**What a rule actually is:** **Rules** enforce business policy — multi-table derivations, constraints, and actions like messaging. **LogicBank**, the rule engine, hooks SQLAlchemy's commit event to run them on every transaction — authored as plain Python functions in `logic/logic_discovery/`, readable, version-controlled, owned like any other source file.
-
-**How it works:**
-1. **At startup** — rules load, and the engine computes their dependency graph once.
-2. **At commit** — for each transaction, the engine finds the rules relevant to what changed, and fires them in the right order.
-
-Unlike procedural code, they're **declarative** — solving exactly the three problems raised above (AI great, but hard to Read, Trust, and Maintain):
+<br>Three properties, declared once — procedural code has to earn each of these by hand, on every change:
 
 | Property | What it means | Why it matters |
 |---|---|---|
@@ -219,47 +201,7 @@ Unlike procedural code, they're **declarative** — solving exactly the three pr
 
 > Think of a **spreadsheet:** `B10 = SUM(B1:B9)` isn't called, it *reacts* — change any input cell, it recalculates. Rules react the same way to changes in what they depend on.
 
-That's why order didn't matter — the engine computes it, not your source file — and why the edit was caught: it fires at every commit, from every caller, not just the one you wrote it for.
-
-> With procedural code, even if you find the right passage — how do you know it's called for *every* transaction source? API, MCP, agent, Kafka, a future caller you haven't written yet? With thousands of code paths, you can't know. That's not a testing gap; it's a representation problem. Rules solve it structurally — declared once, fired at one commit point, from every caller, with no bypass possible. The 40x reduction in code isn't the point. The verifiable coverage is: ***you can read the rules, and trust they are being enforced. Always.***
-
-<details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;How this works: Context Engineering (CE) + a commit-time rules engine</summary>
-
-<br>Two things have to be true for this to work:
-
-**Step 1 — Context Engineering trains the AI to write rules, not code.** That same AI, left unguided, would have produced the ~200 buggy lines from earlier. Writing rules instead wasn't its own idea — it was told to, in detail, by **Context Engineering** — the same files driving this conversation right now:
-
-- **Directs rules, not code.** When you ask for business logic, CE steers the AI toward the *right* rule type (sum vs. count vs. Allocate vs. Request Pattern) for what you actually asked for, instead of letting it default to the procedural code it's seen a million times in training.
-
-- **Trains the AI to automate everything above, and to help you when it breaks.** EAI's 2-message Kafka pattern, the AI/Request Pattern wiring, Executable Requirements' pre-coding schema assessment — all of it is documented training material (`docs/training/*`) the AI reads *before* writing your code, not generic knowledge it's guessing from. Ask "what are rules?" or "how do rules work?" — or, without an AI handy, just read [samples/basic_demo_logic_gov/logic/readme_logic.md](samples/basic_demo_logic_gov/logic/readme_logic.md) — same material.
-
-- **Answers your own questions, too.** Same materials, same AI — ask it directly:
-    - Is this really infrastructure, like a database?
-    - Is this a black box? How do I debug a rule chain?
-    - What does it take to migrate off this if we ever wanted to?
-    - How does this perform at scale?
-    - What does this integrate with — APIs, workflows, agents, MCP?
-    - Does this work with my existing database?
-
-  More background: [Eval Guide](https://apilogicserver.github.io/Docs/Eval/).
-
-  <details markdown>
-  <summary>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The AI was trained on this material — can you trust its answers?</summary>
-
-  <br>Don't take them on faith. Ask the same question a different way, or ask something not covered here — like where this architecture breaks down. If it just recites the same lines back, you've caught it. If it reasons, that's the test passing.
-
-  </details>
-
-Put together: once the AI knows how the system works, it doesn't just generate rules instead of code — it helps you debug them, and helps you understand them. A design assistant, not just a coding assistant.
-
-**Step 2 — the rules engine runs the rules.** Rules aren't called from your code — they're wired into a single SQLAlchemy `before_flush` listener, loaded once at server start as described above. Every write, from any path — API, custom endpoint, Kafka consumer, agent — passes through that one listener before it commits. No bypass — there's no second door.
-
-</details>
-
-<br>
-
-Full writeup: [declarative/procedural comparison](samples/basic_demo_logic_gov/logic/procedural/declarative-vs-procedural-comparison.md).
+Don't take that on faith — an AI was asked to rebuild this same logic without the rule engine, procedurally. It shipped real bugs. See them: [declarative vs. procedural comparison](samples/basic_demo_sample/logic/procedural/declarative-vs-procedural-comparison.md).
 
 </details>
 
