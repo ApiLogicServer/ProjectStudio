@@ -1,4 +1,4 @@
-# Manager Workspace — Claude Code Instructions
+# ProjectStudio — AI Assistant Instructions
 
 ## ⚠️ Codespaces: ApiLogicServer is pre-installed globally — no venv
 This devcontainer is built `FROM apilogicserver/api_logic_server`, which already has
