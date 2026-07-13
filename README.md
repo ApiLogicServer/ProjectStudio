@@ -31,10 +31,6 @@ AI builds **enterprise-class systems** — from one prompt or your existing data
 
 &nbsp;
 
-This is the start page for the [GenAI-Logic Manager](https://apilogicserver.github.io/Docs/Manager) — where you manage projects, create notes and resources, etc.
-
-&nbsp;
-
 ## 🤖 AI Assistance
 
 <details markdown>
