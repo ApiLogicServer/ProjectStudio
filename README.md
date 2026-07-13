@@ -145,10 +145,6 @@ Either path gets you the same thing: a working API and Admin App **plus the gove
 
 &nbsp;
 
-> **Want a guided tour instead of reading?** Once `basic_demo` is running, just say **"Guide me through basic_demo"** — a 30-45 minute hands-on walkthrough (rules, security, debugging, B2B/Kafka integration) where your AI assistant drives and you follow along in the running app.
-
-&nbsp;
-
 <details markdown>
 <summary>AI-driven rules are easy to Read, Trust, and Maintain — here's how</summary>
 
@@ -364,7 +360,16 @@ The architecture that makes this work: two funnels, converging on one engine. Al
 &nbsp;
 
 <details markdown>
-<summary>Go deeper — 30-45 min guided tour</summary>
+<summary>Go Deeper — guided tour, APIs, messaging</summary>
+
+&nbsp;
+
+You don't need any of this on day one — the admin app and the rules you just saw are enough to get going. Once the basics feel natural, here's more: a hands-on tour, and proof the same governed logic runs identically no matter how a transaction arrives — Admin App, API, or message queue. No separate logic to maintain per channel, and no gap for compliance to worry about.
+
+&nbsp;
+
+<details markdown>
+<summary>Guided tour — 30-45 min, hands-on</summary>
 
 &nbsp;
 
@@ -378,14 +383,6 @@ genai-logic create --project_name=basic_demo --db_url=sqlite:///samples/dbs/basi
 > Teaches API creation, declarative rules, security, and Python customization. Fail-safe — scripts ensure no coding errors.
 
 </details>
-
-&nbsp;
-
-&nbsp;
-
-## 🔌 Beyond the UI — APIs & Messaging
-
-You don't need this on day one — the admin app and the rules you just saw are enough to get going. But once the basics feel natural, this is worth five minutes: the same governed logic you just watched enforce a credit check runs identically no matter how a transaction arrives — Admin App, API, or message queue. No separate logic to maintain per channel, and no gap for compliance to worry about.
 
 &nbsp;
 
@@ -420,6 +417,10 @@ When an Order's date_shipped is set, publish it to Kafka topic 'order_shipping'.
 ```
 
 You can try this without standing up Kafka at all — a debug endpoint sends a test message straight to the logic, so you can confirm the behavior before wiring up real infrastructure.
+
+</details>
+
+&nbsp;
 
 </details>
 
