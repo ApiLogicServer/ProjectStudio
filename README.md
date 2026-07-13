@@ -45,9 +45,6 @@ AI builds **enterprise-class systems** — from one prompt or your existing data
 
 That's it — ProjectStudio will greet you and ask what you want to build. No "Please load" needed; the model is picked automatically.
 
-![select the ProjectStudio agent](docs/images/select-projectstudio-agent.png)
-<!-- TODO(Val): replace with a real screenshot of the chat panel right after running the /agent command above -->
-
 <details markdown>
 <summary>Why: pins the model to Claude Sonnet 5 and pre-loads instructions</summary>
 
