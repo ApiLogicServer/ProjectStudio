@@ -127,7 +127,7 @@ Either path gets you the same thing: a working API and Admin App **plus the gove
 &nbsp;
 
 <details markdown>
-<summary>One more thing — that's governing logic: 5 rules, not 200 lines</summary>
+<summary>Key Idea — governing logic: 5 rules, not 200 lines</summary>
 
 &nbsp;
 
