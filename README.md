@@ -77,7 +77,7 @@ See it for yourself in the two examples below.
 &nbsp;
 
 <details markdown>
-<summary>Example — Existing Database</summary>
+<summary>Example — Existing Database, including logic you can read, trust, and maintain</summary>
 
 <br>Say this to your AI assistant (allow several minutes):
 
