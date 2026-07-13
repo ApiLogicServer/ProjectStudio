@@ -18,6 +18,9 @@
     "python.defaultInterpreterPath": "/usr/local/bin/python",
     "python.terminal.activateEnvironment": true,
     "workbench.startupEditor": "readme",
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
     "workbench.colorTheme": "Arduino Light",
     "markdown.previewFrontMatter": "hide"
 }
