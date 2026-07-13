@@ -31,7 +31,18 @@ AI builds **enterprise-class systems** — from one prompt or your existing data
 
 &nbsp;
 
+> 🚧 **Under construction.** This business-user variant of GenAI-Logic is new — expect rough edges while we refine it.
+
+&nbsp;
+
 ## 🤖 AI Assistance
+
+**Select the ProjectStudio agent** from the dropdown at the bottom of the Copilot Chat panel (where Ask / Edit / Agent live) — that's it, no other setup:
+
+![select the ProjectStudio agent](docs/images/select-projectstudio-agent.png)
+<!-- TODO(Val): replace with a real screenshot of the agent dropdown showing "ProjectStudio" selected -->
+
+ProjectStudio pre-loads the project's instructions and picks the model automatically — **you do not need to say "Please load" anything.** It'll greet you and ask what you want to build.
 
 <details markdown>
 <summary>Why: pins the model to Claude Sonnet 5 and pre-loads instructions</summary>
@@ -49,13 +60,6 @@ Please load `.github/copilot-instructions.md`.
 For more information, see [AI-Enabled Projects](https://apilogicserver.github.io/Docs/Project-AI-Enabled/) or [click here](https://apilogicserver.github.io/Docs/Manager-readme/).
 
 </details>
-
-&nbsp;
-
-**Select the ProjectStudio agent** from the dropdown at the bottom of the Copilot Chat panel (where Ask / Edit / Agent live):
-
-![select the ProjectStudio agent](docs/images/select-projectstudio-agent.png)
-<!-- TODO(Val): replace with a real screenshot of the agent dropdown showing "ProjectStudio" selected -->
 
 &nbsp;
 
