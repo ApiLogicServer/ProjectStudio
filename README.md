@@ -96,38 +96,10 @@ On Placing Orders, Check Credit
 
 > **Running in Codespaces?** During project creation, a browser tab may auto-open (or offer to) showing it running — safe to decline or dismiss.
 
-</details>
-
 &nbsp;
 
 <details markdown>
-<summary>Example — New Database</summary>
-
-<br>No existing database? Same idea, same governing logic — just describe the tables instead of pointing at a `.sqlite` file (allow 8-10 mins):
-
-```
-Create basic_demo_new (no existing database) with:
-    Customer: name, balance, credit_limit
-    Order: customer, date_shipped, notes
-    Item: order, product, quantity, unit_price, amount
-    Product: name, unit_price
-
-On Placing Orders, Check Credit
-    1. The Customer's balance is less than the credit limit
-    2. The Customer's balance is the sum of the Order amount_total where date_shipped is null
-    3. The Order's amount_total is the sum of the Item amount
-    4. The Item amount is the quantity * unit_price
-    5. The Item unit_price is copied from the Product unit_price
-```
-
-Either path gets you the same thing: a working API and Admin App **plus the governing logic above** — not just a static schema.
-
-</details>
-
-&nbsp;
-
-<details markdown>
-<summary>Key Idea — governing logic: 5 rules, not 200 lines</summary>
+<summary>&emsp;&emsp;Key Idea — governing logic: 5 rules, not 200 lines</summary>
 
 &nbsp;
 
@@ -138,7 +110,7 @@ The prompt above didn't just describe a database — the "Check Credit" block is
 &nbsp;
 
 <details markdown>
-<summary>AI-driven rules are easy to Read, Trust, and Maintain — here's how</summary>
+<summary>&emsp;&emsp;AI-driven rules are easy to Read, Trust, and Maintain — here's how</summary>
 
 &nbsp;
 
@@ -300,6 +272,34 @@ Put together: once the AI knows how the system works, it doesn't just generate r
 Full writeup: [declarative/procedural comparison](samples/basic_demo_logic_gov/logic/procedural/declarative-vs-procedural-comparison.md).
 
 </details>
+
+</details>
+
+</details>
+
+&nbsp;
+
+<details markdown>
+<summary>Example — New Database</summary>
+
+<br>No existing database? Same idea, same governing logic — just describe the tables instead of pointing at a `.sqlite` file (allow 8-10 mins):
+
+```
+Create basic_demo_new (no existing database) with:
+    Customer: name, balance, credit_limit
+    Order: customer, date_shipped, notes
+    Item: order, product, quantity, unit_price, amount
+    Product: name, unit_price
+
+On Placing Orders, Check Credit
+    1. The Customer's balance is less than the credit limit
+    2. The Customer's balance is the sum of the Order amount_total where date_shipped is null
+    3. The Order's amount_total is the sum of the Item amount
+    4. The Item amount is the quantity * unit_price
+    5. The Item unit_price is copied from the Product unit_price
+```
+
+Either path gets you the same thing: a working API and Admin App **plus the governing logic above** — not just a static schema. Same "Run it / Debug it / Iterate" walkthrough from the Existing Database example above applies here too, once it's running.
 
 </details>
 
