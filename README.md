@@ -45,6 +45,8 @@ Now **Business Analysts and Product Managers** can build **enterprise-class syst
 
 That's it — ProjectStudio will greet you and ask what you want to build. No "Please load" needed; the model is picked automatically.
 
+![ProjectStudio agent greeting](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/project-studio/studio-start.png?raw=true)
+
 <details markdown>
 <summary>Why: pins the model to Claude Sonnet 5 and pre-loads instructions</summary>
 
