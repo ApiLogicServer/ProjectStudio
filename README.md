@@ -31,6 +31,8 @@ Now **Business Analysts and Product Managers** can build **enterprise-class syst
 
 &nbsp;
 
+![Choosing Claude Sonnet 5 from the model picker](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio.png?raw=true)
+
 > 🚧 **Under construction.** This business-user variant of GenAI-Logic is new — expect rough edges while we refine it.
 
 &nbsp;
@@ -43,8 +45,6 @@ In the Copilot Chat panel, click the **Auto** pill at the bottom of the chat box
 Please load `.github/copilot-instructions.md`.
 ```
 
-![Choosing Claude Sonnet 5 from the model picker](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio-choose-agent.png?raw=true)
-
 <details markdown>
 <summary>Detailed steps, and what this costs</summary>
 
@@ -56,6 +56,8 @@ Please load `.github/copilot-instructions.md`.
 3. **If Claude Sonnet 5 appears in the list:** select it.
    **If it's not there** (Free/Student plans — see below): leave it on **Auto**.
 4. Type the command above and press Enter.
+
+![Choosing Claude Sonnet 5 from the model picker](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio-choose-agent.png?raw=true)
 
 &nbsp;
 
