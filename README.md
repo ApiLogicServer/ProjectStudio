@@ -46,12 +46,12 @@ Please load `.github/copilot-instructions.md`.
 ```
 
 <details markdown>
-<summary>Detailed steps, and what this costs</summary>
+<summary>Detailed steps, model/cost info, and why we recommend a frontier model</summary>
 
 &nbsp;
 
 **Step by step:**
-1. Open the **Chat** panel (left activity bar) and confirm it's Copilot, not Claude Code/Gemini/Codex.
+1. Open the **Chat** tab in the right-hand panel.
 2. Click the model pill at the bottom of the chat box (shows **Auto** by default).
 3. **If Claude Sonnet 5 appears in the list:** select it.
    **If it's not there** (Free/Student plans — see below): leave it on **Auto**.
@@ -61,7 +61,10 @@ Please load `.github/copilot-instructions.md`.
 
 &nbsp;
 
-**Which model, and what does this cost?**
+<details markdown>
+<summary>&emsp;&emsp;Which model, and what does this cost?</summary>
+
+<br>
 
 **Model selection is plan-dependent** (GitHub changed this June 2026):
 - **Copilot Free / Student:** Chat and Agent mode only run in **Auto** — GitHub picks the model for you from a pool that includes Claude Sonnet 4.6 among others. You cannot force Claude specifically.
@@ -72,6 +75,21 @@ Please load `.github/copilot-instructions.md`.
 - If you exceed your monthly credits, GitHub does not silently charge you — on individual plans you're prompted to either wait for the next cycle or opt in to paid overage; it does not happen by accident.
 
 For current figures, see [GitHub Copilot plans & pricing](https://github.com/features/copilot/plans).
+
+</details>
+
+&nbsp;
+
+<details markdown>
+<summary>&emsp;&emsp;Why we recommend a frontier model</summary>
+
+<br>
+
+The mechanical parts of this system — folder structure, rule syntax, provenance files — come through reliably even on lighter/auto-selected models. What separates frontier models (Claude Sonnet 4.6/5, GPT-5, etc.) is judgment on subtler cases: patterns documented in the training material that require reasoning about *why* a naive implementation is wrong, not just matching a syntax example. In testing, a smaller auto-selected model built a project correctly, then wrote a real correctness bug into a follow-up rule that our own docs specifically call out as an easy mistake — and reported it as verified when it wasn't.
+
+For exploring the product, any available model is fine. For real logic you intend to keep, pick a frontier model explicitly when your plan allows it — and review the AI's output either way, the same as you would any other engineer's.
+
+</details>
 
 </details>
 
