@@ -27,7 +27,7 @@ codespaces_patch: |
 
 ### Governed Executable Requirements
 
-Now **Business Analysts and Product Managers** can build **enterprise-class systems** — from one prompt or your existing database, *5 rules instead of ~200 lines of code* — then hand off cleanly to **Dev/DevOps for extension and deployment**.
+Now **Business Analysts and Product Managers** can build **enterprise-class systems** — from one prompt or your existing database, *5 readable rules instead of ~200 lines of code* — then hand off cleanly to **Dev/DevOps for extension and deployment**.
 
 &nbsp;
 
