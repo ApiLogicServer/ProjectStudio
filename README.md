@@ -45,7 +45,7 @@ Now **Business Analysts and Product Managers** can build **enterprise-class syst
 /agent .github/agents/genai-logic-web-studio.agent.md
 ```
 
-That's it — GenAI-Logic Web Studio will greet you and ask what you want to build. No "Please load" needed; the model is picked automatically.
+That's it — GenAI-Logic Web Studio will greet you and ask what you want to build, using Claude Sonnet 5 (falling back to 4.6, then 4.5, if 5 isn't on your plan yet). No "Please load" needed; the model is picked automatically.
 
 ![GenAI-Logic Web Studio agent greeting](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/project-studio/studio-start.png?raw=true)
 
@@ -54,11 +54,9 @@ That's it — GenAI-Logic Web Studio will greet you and ask what you want to bui
 
 &nbsp;
 
-This workspace ships a custom **GenAI-Logic Web Studio** agent — it prefers **Claude Sonnet 5** (falling back automatically to 4.6, then 4.5, if 5 isn't on your plan yet) and pre-loads the project's instructions automatically, no extra step needed. "Ask" mode will not work — GenAI-Logic Web Studio needs to create files and run commands.
+This workspace ships a custom **GenAI-Logic Web Studio** agent — it prefers **Claude Sonnet 5** and pre-loads the project's instructions automatically, no extra step needed. "Ask" mode will not work — GenAI-Logic Web Studio needs to create files and run commands.
 
-You may also see **GenAI-Logic Web Studio** listed directly in the chat mode dropdown (bottom of the input box, where Ask/Edit/Agent live) — selecting it there works too, when it shows up. It's been inconsistent across VS Code versions, so the typed command above is the reliable path for now.
-
-Neither working? Use **Agent** mode instead, then paste:
+If `/agent` isn't recognized by your Copilot version, select **Agent** mode, pick **Claude Sonnet 5.0/4.6** from the model picker, then paste:
 
 ```
 Please load `.github/copilot-instructions.md`.

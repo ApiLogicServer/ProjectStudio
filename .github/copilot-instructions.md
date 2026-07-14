@@ -219,9 +219,9 @@ genai-logic create  --project_name=nw --db_url=sqlite:///samples/dbs/nw.sqlite
 
 ### Method 2: (superseded by Method 4 in this workspace)
 
-The `genai-logic genai` CLI pipeline this method used is not the preferred approach here
-(see the top of `CLAUDE.md`) and its example prompt files were pruned from this trimmed
-workspace. If you have both database AND business logic requirements, use **Method 4**
+The `genai-logic genai` CLI pipeline this method used is not the preferred approach here —
+never run it, even for prompt files — and its example prompt files were pruned from this
+trimmed workspace. If you have both database AND business logic requirements, use **Method 4**
 below instead — same outcome (NL requirements -> full system with rules), driven by
 Claude/Copilot + this CE rather than the older fine-tuned-ChatGPT pipeline.
 
