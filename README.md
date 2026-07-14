@@ -317,13 +317,13 @@ Either path gets you the same thing: a working API and Admin App **plus the gove
 
 - **MCP (AI agents)** — your API is MCP-discoverable out of the box, so Copilot, Claude, or ChatGPT can query it directly, no discovery layer to write: [`mcp_discovery.py`](samples/basic_demo_sample/api/api_discovery/mcp_discovery.py), [readme](samples/basic_demo_sample/readme_ai_mcp.md).
 
-- **Governance you can prove, not just assert** — reports generated from the running system, not hand-written: [logic diagram generator](samples/basic_demo_sample/docs/logic_diagram.md), [health check](samples/basic_demo_sample/docs/training/health_check.md). A compliance reviewer can check the implementation in minutes, not by reading code.
+- **Governance you can prove, not just assert** — reports generated from the running system, not hand-written: [health check](samples/basic_demo_sample/docs/training/health_check.md) (rule adoption, dependency tracking, at a glance). A compliance reviewer can check the implementation in minutes, not by reading code. If you're curious what a full dependency diagram looks like, [here's a real one](samples/demo_customs_clvs/docs/requirements/logic_flow_demo_customs_clvs.md) — optional, no need to dig in now.
 
 - **Custom UIs, safely** — Vibe tools (Cursor, v0, etc.) generate the UI; it's built against the same governed API, so the logic runs the same regardless of what's calling it — `genai-logic genai-add-app --vibe`.
 
 &nbsp;
 
-**The mic-drop: Executable Requirements.** AI builds real enterprise systems straight from the same formats already sitting in this workspace — no new syntax, nothing hidden, nothing hand-tuned after the fact:
+**Where this leads: Governed Executable Requirements.** AI didn't build these alone — the governance above (rules, reports, an audit trail of every assumption) is what turns "AI wrote a system" into something you can actually hand to compliance. Same formats already sitting in this workspace, no new syntax, nothing hidden, nothing hand-tuned after the fact:
 
 - **A government regulation, referenced by citation number** — [the entire prompt](samples/prompts/customs_cbsa.prompt.md) that builds a Canada Customs (CBSA) steel-tariff duty calculator is 9 lines.
 - **A Gherkin-style requirements spec** — [the actual `requirements.md`](samples/requirements/customs_demo_clvs/docs/requirements/customs_demo/requirements.md) a PM would write and hand off, no interpretation needed — see [how the workflow works](samples/requirements/readme_reqmts.md).
