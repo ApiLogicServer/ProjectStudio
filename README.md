@@ -37,17 +37,13 @@ Now **Business Analysts and Product Managers** can build **enterprise-class syst
 
 ## 🤖 AI Assistance
 
-In the Copilot Chat panel, set mode to **Agent**, pick **Claude Sonnet** as the model (if your plan offers it), then type and Enter:
-
-```
-/agent .github/agents/genai-logic-web-studio.agent.md
-```
-
-If `/agent` isn't recognized by your Copilot version, paste this instead:
+In the Copilot Chat panel, click the **Auto** pill at the bottom of the chat box and pick **Claude Sonnet 5** from the list (if it's not there, leave it on Auto), then type and Enter:
 
 ```
 Please load `.github/copilot-instructions.md`.
 ```
+
+![Choosing Claude Sonnet 5 from the model picker](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio-choose-agent.png?raw=true)
 
 <details markdown>
 <summary>Detailed steps, and what this costs</summary>
@@ -55,11 +51,11 @@ Please load `.github/copilot-instructions.md`.
 &nbsp;
 
 **Step by step:**
-1. Open the **Chat** panel (left activity bar) and confirm the mode dropdown at the bottom of the chat box says **Copilot**, not Claude Code/Gemini/Codex.
-2. Set the mode dropdown to **Agent** (not Ask or Edit).
-3. **If you're on Copilot Pro or above:** open the model picker (next to the mode dropdown) and select **Claude Sonnet**.
-   **If you're on the Free or Student plan:** skip this — manual model choice isn't available on those plans (see below); leave it on **Auto**.
-4. Type the `/agent` command above (or the `Please load` fallback) and press Enter.
+1. Open the **Chat** panel (left activity bar) and confirm it's Copilot, not Claude Code/Gemini/Codex.
+2. Click the model pill at the bottom of the chat box (shows **Auto** by default).
+3. **If Claude Sonnet 5 appears in the list:** select it.
+   **If it's not there** (Free/Student plans — see below): leave it on **Auto**.
+4. Type the command above and press Enter.
 
 &nbsp;
 
@@ -76,11 +72,6 @@ Please load `.github/copilot-instructions.md`.
 For current figures, see [GitHub Copilot plans & pricing](https://github.com/features/copilot/plans).
 
 </details>
-
-<!-- TODO(Val): studio-start.png is stale — shows the old ProjectStudio name, CLAUDE.md,
-     the old .agent.md path, and the "model is picked automatically" claim we've since
-     removed. Replace with a current screenshot of: Chat panel set to Copilot + Agent mode,
-     model picker open showing Claude Sonnet selected (Pro+), before /agent is typed. -->
 
 &nbsp;
 
