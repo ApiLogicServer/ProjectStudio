@@ -98,17 +98,17 @@ For exploring the product, any available model is fine. For real logic you inten
 ## 🚀 First Time Here?
 <!-- CODESPACES-INSERT-POINT: create_codespaces_mgr.py injects browser note here — do not rename this heading -->
 
-You're already running in GitHub Codespaces — a cloud VS Code environment in your browser. Nothing to install. (Use Chrome or Edge — Safari has known compatibility issues with VS Code in the browser.)
+You're already running in GitHub Codespaces — a cloud VS Code environment in your browser. Everything is already pre-installed.
 
 
 <details markdown>
-<summary>The Ideal — executable business prompts, held to an enterprise standard</summary>
+<summary>The Vision — provide business prompt, get Enterprise-class system</summary>
 
-<br>The goal here isn't a demo — it's an **enterprise-class** system you can trust and maintain:
+<br>We want much more than a demo — we want to provide an **business-oriented prompt**, and get an **enterprise-class** system we can trust and maintain:
 
-1. **User Friendly** — no database design or screen painting to learn; it's all automated from natural language.
-2. **Dev Friendly** — standard language, standard tooling; devs can extend this project in the IDE they already use.
-3. **DevOps Friendly** — containers; deploy to cloud or on-prem.
+1. **User Friendly** — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
+2. **Dev Friendly** — devs can extend this project in the IDE they already use, in a common programming language
+3. **DevOps Friendly** — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
 4. **Enterprise Friendly** — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
 
 See it for yourself in the two examples below.
@@ -125,7 +125,7 @@ See it for yourself in the two examples below.
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;1. Declare it — governing logic, not documentation</summary>
+<summary>&emsp;&emsp;1. Declare it — with governing logic (executable, not just documentation)</summary>
 
 <br>Say this to your AI assistant:
 
@@ -142,9 +142,12 @@ On Placing Orders, Check Credit
     5. The Item unit_price is copied from the Product unit_price
 ```
 
-> **Running in Codespaces?** During project creation, a browser tab may auto-open (or offer to) showing it running — safe to decline or dismiss.
+> During project creation, a browser tab may auto-open (or offer to) showing it running — safe to **decline or dismiss**.
 
-The prompt above didn't just describe a database — the "Check Credit" block is **governing logic**, not documentation. Left unguided, an AI assistant would default to procedural code for rules like these — readable at 5 rules, but every future change means re-checking every code path by hand, and that stops scaling long before a real system's requirement count does. Declarative rules avoid that: they're specifications the engine enforces automatically, not procedure you maintain.
+Two quick points:
+
+1. **This *runs*** - we'll see it next (step 2).  In particular, the logic (the `Check Credit` block) is executable - not just documentation.
+2. **This is *readable*** - without GenAI-Logic guidance, an AI assistant would default to procedural code like this ([click here](samples/basic_demo_sample/logic/procedural/credit_service.py))— ~200 lines of code that are too hard to read - for you, or developers, especially when the systems becomes large.
 
 That's what you just declared. Next: run it, and see it enforced.
 
@@ -155,20 +158,14 @@ That's what you just declared. Next: run it, and see it enforced.
 <details markdown>
 <summary>&emsp;&emsp;2. Run it — see the API and logic operate</summary>
 
-<br>You've probably used AI to generate code before — so what's different here?
+<br>From that one prompt, you get a working, enterprise-class system:
 
-**Difference 1: it produces models, not code.** Run the basic_demo prompt above, and instead of a pile of procedural code, you get artifacts that declare structure or policy rather than procedure — same 5 requirements, same AI:
+1. **Full REST API** — filtering, sorting, pagination, optimistic locking — no extra work
+2. **Admin App** — multi-table, with navigations and lookups, ready to use
+3. **Business logic, enforced** — the 5 rules you declared, running on every transaction
+4. **Security-ready** — opt-in RBAC anytime with `genai-logic add-auth`
 
-1. **Data model** — `database/models.py`
-2. **Full JSON:API** — Swagger, pagination, optimistic locking (`api/expose_api_models.py` — 52 lines, zero per-table code)
-3. **Admin App** — multi-table, with navigations and lookups (`ui/admin/admin.yaml` — simple YAML, not HTML/JS)
-4. **Business logic** — [logic_discovery/place_order/check_credit.py](samples/basic_demo_sample/logic/logic_discovery/place_order/check_credit.py) — 5 rules (~40X less), same requirements, same AI
-
-**Difference 2: the logic itself is declarative** — more on why that matters below.
-
-Each small, readable, yours. Plain Python — standard tooling applies. Security is opt-in, not default — bootstrap RBAC anytime with `genai-logic add-auth`.
-
-**See it running:** Press F5 using "API Logic Server Run (run project from manager)", and open the Admin App. Explore the API via Swagger, browse the data, and follow the relationships — all auto-generated from the data model.
+**See it running:** Press F5 using "API Logic Server Run (run project from manager)", and open the Admin App. Explore the API via Swagger, browse the data, and follow the relationships.
 
 Now trigger it: open an **unshipped** Order for Alice, edit the Widget item:
 
@@ -200,22 +197,27 @@ The save fails — note the dialog. Why? Let's look.
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;3. Debug it — standard logging, standard debugger</summary>
+<summary>&emsp;&emsp;3. Fix it — tell your AI assistant what looked wrong, in plain language</summary>
 
-<br>No new tools required. The rule chain that just fired is written to the standard log — plain text, readable in your terminal or editor: `logs/als.log`.
+<br>Something didn't work as expected? Just tell your AI assistant: *"The credit check didn't fire"* or *"The order total looks wrong."* It reads the same rule trace and log the system produces, finds the cause, and fixes it — you don't read logs or code.
 
-Every rule is a plain Python function or lambda. Set a breakpoint on any `calling=` function or `as_condition=` lambda in your IDE, exactly like you would anywhere else in the codebase — no proprietary debugger, no special UI.
+<details markdown>
+<summary>&emsp;&emsp;&emsp;&emsp;Your dev buddies will love this — standard logging, standard debugging, in their IDE</summary>
+
+<br>Every rule is a plain Python function or lambda, and every firing is written to a standard log — plain text, readable in your terminal or editor: `logs/als.log`. Set a breakpoint on any `calling=` function or `as_condition=` lambda, exactly like you would anywhere else in the codebase — no proprietary debugger, no special UI.
 
 ![logic-debug](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/logic/logic-debug.png?raw=true)
+
+</details>
 
 </details>
 
 &nbsp;
 
 <details markdown>
-<summary>&emsp;&emsp;4. Iterate — 1 AI prompt adds table, relationship, 2 rules</summary>
+<summary>&emsp;&emsp;4. Iterate — no system is right the first time, and that's fully supported here</summary>
 
-<br>Ask your AI assistant for a new rule, in plain English:
+<br>Requirements get refined as you see the system take shape — that's expected, not a fallback. Ask your AI assistant for a new rule, in plain English:
 
 ```
 Customers should not be able to create new orders if they have unresolved past due letters.
