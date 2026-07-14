@@ -47,6 +47,8 @@ Please load `.github/copilot-instructions.md`.
 
 > **See "Quota reached" in the status bar?** Safe to ignore — it doesn't mean anything is broken or unavailable.
 
+> **This takes 20-30 seconds.** You'll see "Working" the whole time with no other feedback — that's normal, not stuck.
+
 <details markdown>
 <summary>Detailed steps, model/cost info, and why we recommend a frontier model</summary>
 
