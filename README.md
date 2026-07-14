@@ -37,7 +37,9 @@ Now **Business Analysts and Product Managers** can build **enterprise-class syst
 
 ## 🤖 AI Assistance
 
-**In the Copilot Chat panel, type this and press Enter:**
+**Check the Chat panel's title bar or model picker actually says Copilot** before continuing — VS Code's Chat panel can be backed by different extensions (Copilot, Claude Code, Gemini, Codex, etc.), and `/agent` is a Copilot-only command; other extensions will silently ignore it and fall back to their own default model instead of erroring.
+
+**Once you've confirmed Copilot Chat is active, type this and press Enter:**
 
 ```
 /agent .github/agents/genai-logic-web-studio.agent.md
