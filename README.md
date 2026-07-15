@@ -199,7 +199,7 @@ Change the quantity to a very large number. Save.
 
 The **save fails** — note the dialog. Why? Because `Check Credit` was translated into rules, not ~200 lines of frankencode.
 
-> That's the actual value GenAI-Logic adds: <br>1. You describe the policy once, in English - Gherkin, pseudocode, whatever you are familiar with<br>2. AI translates it into **5 readable, executable rules**<br>3. The GenAI-Logic rules engine **fires them on every save, forever**, with no code path that can skip it.
+> That's the actual value GenAI-Logic adds: <br>1. You describe the policy once, in English - Gherkin, pseudocode, whatever you are familiar with<br>2. AI translates it into **5 readable, executable rules**<br>3. The GenAI-Logic rules engine **fires them on every transaction, regardless of its source**, with no code path that can skip it.
 
 </details>
 
