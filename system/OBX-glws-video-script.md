@@ -36,16 +36,21 @@ a quotation of it.
 
 | SHOW | SAY |
 |---|---|
-| Codespaces, chat panel open, typing/pasting the prompt. Let the 5-line rule text actually sit on screen, readable, ~10-15 sec — this is real screen time, not choppable. | "Here's the whole spec. Five lines, plain English:" *(pause, let it read)* "That's it. That's the business policy. No developer wrote this — I did, in the language I already think in. Now I hit enter." |
+| Codespaces, chat panel open, typing/pasting the prompt. Let the text actually sit on screen, readable, ~10-15 sec — this is real screen time, not choppable. | "Here's the whole spec, plain English:" *(pause, let it read)* "That's it. That's the business policy. No developer wrote this — I did, in the language I already think in. Now I hit enter." |
 
-**Prompt on screen:**
+**Prompt on screen (matches README step 1 verbatim):**
 ```
+Create basic_demo from samples/dbs/basic_demo.sqlite.
+
 On Placing Orders, Check Credit
     1. The Customer's balance is less than the credit limit
     2. The Customer's balance is the sum of the Order amount_total where date_shipped is null
     3. The Order's amount_total is the sum of the Item amount
     4. The Item amount is the quantity * unit_price
     5. The Item unit_price is copied from the Product unit_price
+
+Use case: App Integration
+    1. Publish the Order to Kafka topic 'order_shipping' when the date_shipped becomes not None.
 ```
 
 **Cut:** the 2-minute generation wait is edited out entirely — jump straight to a running system.
