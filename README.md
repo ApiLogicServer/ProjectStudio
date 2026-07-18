@@ -27,14 +27,14 @@ codespaces_patch: |
 
 ### Governed Executable Requirements
 
-GenAI-Logic Web Studio enables **Business Analysts and Product Managers** to build **executable systems from business requirements**. Not demos, but **enterprise-class** systems, **governed** by rules you can Read, Trust, and Maintain (~5 rules instead of ~200 lines of code for the same policy).
+GenAI-Logic Web Studio enables **Business Analysts and Product Managers** to build **executable systems from business requirements** — real, **enterprise-class systems:**
 
-Not only that — it fits how your org already works:
-
-1. **User Friendly** — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
-2. **Dev Friendly** — devs can extend this project in the IDE they already use, in a common programming language.
-3. **DevOps Friendly** — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
-4. **Enterprise Friendly** — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
+* Systems that fit into your org **today**
+  1. *User Friendly* — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
+  2. *Dev Friendly* — devs can extend this project in the IDE they already use, in a common programming language.
+  3. *DevOps Friendly* — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
+  4. *Enterprise Friendly* — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
+* And can be maintained **tomorrow: *governed*** by rules you can Read, Trust, and Maintain (~5 rules instead of ~200 lines of code for the same policy).
 
 Let's build a real system — in minutes, below.
 
