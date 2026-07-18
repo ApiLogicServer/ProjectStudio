@@ -29,12 +29,28 @@ codespaces_patch: |
 
 GenAI-Logic Web Studio enables **Business Analysts and Product Managers** to build **executable systems from business requirements** — real, **enterprise-class systems:**
 
-* Systems that fit into your org **today**
-  1. *User Friendly* — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
-  2. *Dev Friendly* — devs can extend this project in the IDE they already use, in a common programming language.
-  3. *DevOps Friendly* — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
-  4. *Enterprise Friendly* — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
-* And can be maintained **tomorrow: *governed*** by rules you can Read, Trust, and Maintain (~5 rules instead of ~200 lines of code for the same policy).
+<details markdown>
+<summary>For <strong>today:</strong> systems that <strong><em>fit</em> into your org, technology and practices </strong></summary>
+
+<br>
+
+1. *User Friendly* — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
+2. *Dev Friendly* — devs can extend this project in the IDE they already use, in a common programming language.
+3. *DevOps Friendly* — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
+4. *Enterprise Friendly* — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
+
+</details>
+
+&nbsp;
+
+<details markdown>
+<summary>For <strong>tomorrow</strong>: systems <strong><em>governed</em></strong> by rules you can <strong>Read, Trust, and Maintain</strong></summary>
+
+<br>The example we'll build now illustrates 5 lines of logic translated into 5 rules. Instead of ~200 lines of code, you can read the rules, and the system guarantees they are run on every transaction.
+
+</details>
+
+&nbsp;
 
 Let's build a real system — in minutes, below.
 
@@ -229,7 +245,7 @@ There was no `Letter` table in the model — the AI **adds it**, relates it to `
 
 <br>It doesn't matter how the transaction arrives — API, AI agent, Admin App, or message queue — or what kind of change it is — adding an order, editing one, moving it to a different customer. Same rules, same enforcement, every time. No client-specific logic to duplicate, no path that slips through ungoverned.
 
-Don't take that on faith — an AI was asked to rebuild this same logic without the rule engine, procedurally. **It shipped real bugs**: hundreds of lines, hard to follow, with subtle issues you'd have to go find yourself. See it: [declarative vs. procedural comparison](samples/basic_demo_sample/logic/procedural/declarative-vs-procedural-comparison.md) — compared line-for-line with the 5 rules above.
+Contrast this with the natural alternative — a native AI, asked to build this same logic without a rule engine, writing it procedurally instead. **It shipped real bugs**: hundreds of lines, hard to follow, with subtle issues you'd have to go find yourself. See it: [declarative vs. procedural comparison](samples/basic_demo_sample/logic/procedural/declarative-vs-procedural-comparison.md) — compared line-for-line with the 5 rules above.
 
 </details>
 

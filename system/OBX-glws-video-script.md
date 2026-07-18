@@ -14,7 +14,7 @@ and the live trigger/save-fails moment — plus a proper setup+payoff for the
 insert-vs-update aha don't fit in 2-3 min without cutting one of them, and both
 earn their place. See "Timing Notes" at the end.)
 
-**Narrator:** Val, first-person, talking to camera + screen capture. Confident,
+**Narrator:** First-person, talking to camera + screen capture. Confident,
 unhurried, no hype-voice — same register as the README's hero line.
 
 **Core rule for every beat:** no beat repeats a phrase from another beat. Say
@@ -28,7 +28,7 @@ a quotation of it.
 
 | SHOW | SAY |
 |---|---|
-| GLWS README hero section, on screen — browser chrome/URL bar visible, no separate mention needed. Pointer/box taps the "today" bullet group briefly, then holds longer on the "tomorrow: governed" line — weight the visual toward tomorrow to match the narration. | "This is GenAI-Logic Web Studio. A Business Analyst or Product Manager is about to build a real, enterprise-class system. It fits how your org works today. But here's the real point: it's easy to maintain tomorrow, because it's governed by rules you can Read, Trust, and Maintain — five rules instead of two hundred lines of code for the same policy. Let's build one, right now." |
+| GLWS README hero section, on screen — browser chrome/URL bar visible, no separate mention needed. As the narrator says "today," click open the "For today: systems that fit into your org, technology and practices" details block; as the narrator says "tomorrow," click open the "For tomorrow: systems governed by rules you can Read, Trust, and Maintain" details block. Each stays expanded a beat longer than the spoken line needs, giving a viewer room to pause and actually read it. | "This is GenAI-Logic Web Studio. A Business Analyst or Product Manager is about to build a real, enterprise-class system. It fits how your org works today. But here's the real point: it's easy to maintain tomorrow — governed by rules you can Read, Trust, and Maintain. Let's build one, right now." |
 
 ---
 
@@ -104,7 +104,7 @@ never sticks.
 
 | SHOW | SAY |
 |---|---|
-| Back to chat panel briefly — the "On Placing Orders, Check Credit" prompt text on screen again, small. Then repeat the large-quantity-and-save trigger, but this time editing an existing order. Let it fail again, real-time, but this run can move faster than Beat 4 since the viewer already knows the shape of it. As the narrator lists them, on-screen text builds out beside the prompt: **On Insert · On Update · On Delete · On Reselect Product** — one rule, four paths, nothing written for the other three. | "Here's the part that actually surprised me the first time I saw it. That rule only says 'On *Placing* Orders' — it says nothing about *editing* one." *(trigger plays out)* "Same failure. I never wrote a rule for updates. Insert, update, delete, reselecting the product — one rule, and it covers all of it. Design it once, and it governs every path the change can arrive by. That's what a rules engine gives you." |
+| Back to chat panel briefly — the "On Placing Orders, Check Credit" prompt text on screen again, small. Then repeat the large-quantity-and-save trigger, but this time editing an existing order. Let it fail again, real-time, but this run can move faster than Beat 4 since the viewer already knows the shape of it. As the narrator lists them, on-screen text builds out beside the prompt: **On Insert · On Update · On Delete · On Reselect Product** — one rule, four paths, nothing written for the other three. | "Here's the part that actually surprised me the first time I saw it. That rule only says 'On *Placing* Orders' — it says nothing about *editing* one." *(trigger plays out)* "Same failure. I never wrote a rule for updates. Insert, update, delete, reselecting the product — one rule, and it covers all of it. I didn't have to think of any of those cases — the system caught them anyway. Design it once, and it governs every path the change can arrive by. That's what a rules engine gives you." |
 
 **This is the single most differentiating moment in the video** — it's proof
 the system generalizes to a case nobody explicitly coded for, not just a
