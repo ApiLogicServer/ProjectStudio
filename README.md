@@ -27,13 +27,16 @@ codespaces_patch: |
 
 ### Governed Executable Requirements
 
-GenAI-Logic Web Studio enables **Business Analysts and Product Managers** to build **enterprise-class systems** — from one prompt or an existing database, *5 readable rules instead of ~200 lines of code* — then hand off cleanly to **Dev/DevOps for extension and deployment**.
+GenAI-Logic Web Studio enables **Business Analysts and Product Managers** to build **executable systems from business requirements**. Not demos, but **enterprise-class** systems, **governed** by rules you can Read, Trust, and Maintain (~5 rules instead of ~200 lines of code for the same policy).
 
-&nbsp;
+Not only that — it fits how your org already works:
 
-![Choosing Claude Sonnet 5 from the model picker](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio.png?raw=true)
+1. **User Friendly** — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
+2. **Dev Friendly** — devs can extend this project in the IDE they already use, in a common programming language.
+3. **DevOps Friendly** — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
+4. **Enterprise Friendly** — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
 
-> 🚧 **Under construction.** This business-user variant of GenAI-Logic is new — expect rough edges while we refine it.
+Let's build a real system — in minutes, below.
 
 &nbsp;
 
@@ -46,13 +49,15 @@ Please load `.github/copilot-instructions.md`.
 ```
 
 <details markdown>
-<summary>Detailed steps, what to expect, model/cost info, and why we recommend a frontier model</summary>
+<summary>Detailed steps, what to expect, and model/cost info</summary>
 
 &nbsp;
 
-> **See "Quota reached" in the status bar?** Safe to ignore — it doesn't mean anything is broken or unavailable.
-
 > **This takes 20-30 seconds.** You'll see "Working" the whole time with no other feedback — that's normal, not stuck.
+
+&nbsp;
+
+![The VS Code environment in your browser, with the AI chat panel on the right](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/git-codespaces/genai-logic-web-studio.png?raw=true)
 
 &nbsp;
 
@@ -84,19 +89,6 @@ For current figures, see [GitHub Copilot plans & pricing](https://github.com/fea
 
 </details>
 
-&nbsp;
-
-<details markdown>
-<summary>&emsp;&emsp;Why we recommend a frontier model</summary>
-
-<br>
-
-The mechanical parts of this system — folder structure, rule syntax, provenance files — come through reliably even on lighter/auto-selected models. What separates frontier models (Claude Sonnet 4.6/5, GPT-5, etc.) is judgment on subtler cases: patterns documented in the training material that require reasoning about *why* a naive implementation is wrong, not just matching a syntax example. In testing, a smaller auto-selected model built a project correctly, then wrote a real correctness bug into a follow-up rule that our own docs specifically call out as an easy mistake — and reported it as verified when it wasn't.
-
-For exploring the product, any available model is fine. For real logic you intend to keep, pick a frontier model explicitly when your plan allows it — and review the AI's output either way, the same as you would any other engineer's.
-
-</details>
-
 </details>
 
 &nbsp;
@@ -104,40 +96,20 @@ For exploring the product, any available model is fine. For real logic you inten
 ## 🚀 First Time Here?
 <!-- CODESPACES-INSERT-POINT: create_codespaces_mgr.py injects browser note here — do not rename this heading -->
 
-You're already running in GitHub Codespaces — a cloud VS Code environment in your browser. Everything is already pre-installed.
+Pick an example below and build it.
+
+&nbsp;
+
+<details markdown>
+<summary>1. Create a system from an existing database - api, ui, governed logic, all from a prompt</summary>
+
+<br>
+Say this to your AI assistant (allow several minutes; the database is customer, orders, items and product):
 
 <br>
 
-<details markdown>
-<summary>The Vision — provide business prompt, get Enterprise-class system</summary>
-
-<br>We want much more than a demo — we want to provide an **business-oriented prompt**, and get an **enterprise-class** system we can trust and maintain:
-
-1. **User Friendly** — no database design, screen painting or scripting to learn; it's all automated from *natural language*.
-2. **Dev Friendly** — devs can extend this project in the IDE they already use, in a common programming language
-3. **DevOps Friendly** — the project results in a container; deploy to cloud or on-prem, no additional charges apply.
-4. **Enterprise Friendly** — pluggable security (SQL or Keycloak), full REST API, event/messaging integration (Kafka, webhooks) — built in, not bolted on.
-
-See it for yourself in the two examples below.
-
-</details>
-
-&nbsp;
-
-<details markdown>
-<summary>Example — Existing Database, including logic you can read, trust, and maintain</summary>
-
-<br>Five steps, expand each in turn (allow several minutes for the first):
-
-&nbsp;
-
-<details markdown>
-<summary>&emsp;&emsp;1. Declare it — with governing logic (executable, not just documentation)</summary>
-
-<br>Say this to your AI assistant:
-
 ```
-Create basic_demo from samples/dbs/basic_demo.sqlite (customers, orders, products).
+Create basic_demo from samples/dbs/basic_demo.sqlite.
 
 Include a notes field for orders.
 
@@ -181,15 +153,9 @@ Change the quantity to a very large number. Save.
 ```
 
 <details markdown>
-<summary>&emsp;&emsp;&emsp;&emsp;Detail Instructions -- Screen Shots</summary>
+<summary>&emsp;&emsp;&emsp;&emsp;Screenshot — where to find this in the Admin App</summary>
 
-<br>Alter the quantity for an *unshipped* item:
-
-1. Show the Customer List
-2. Show the first Customer
-3. Show first Order
-4. Edit the Item
-5. Set the quantity
+<br>Customer List → first Customer → first Order → edit the Item → set the quantity:
 
 ![credit-check](https://github.com/ApiLogicServer/Docs/blob/main/docs/images/basic_demo/credit-check.png?raw=true?raw=true)
 
@@ -238,7 +204,7 @@ Customers should not be able to create new orders if they have unresolved past d
 
 There was no `Letter` table in the model — the AI **adds it**, relates it to `Customer`, and declares a `count` + a `constraint`. One sentence creates a schema change and two new rules — automatically integrated with the 5 already there. No need to open `check_credit.py` to find where this belongs, or trace the other rules to check for conflicts: **maintainable**, demonstrated, not asserted.
 
-**Without the engine, this is where AI risk creeps in.** Rewriting procedural code means the AI has to re-check every existing rule by hand — the same kind of missed-case risk everyone's heard about with AI, and **it gets worse as the system grows.** The engine removes that risk: it resolves dependencies automatically, so adding a rule doesn't touch the rest — at any scale, for AI and humans alike.
+**Without the engine, this is where AI risk creeps in.** Rewriting procedural code means the AI has to re-check every existing rule by hand — the same kind of missed-case risk everyone's heard about with AI, and **that risk rises as the system grows.** The engine removes that risk: it resolves dependencies automatically, so adding a rule doesn't touch the rest — at any scale, for AI and humans alike.
 
 </details>
 
@@ -247,7 +213,7 @@ There was no `Letter` table in the model — the AI **adds it**, relates it to `
 <details markdown>
 <summary>&emsp;&emsp;5. Why rules are easy to Read, Trust, and Maintain</summary>
 
-<br>
+<br>Take a breath — you've just seen this happen. Here's what to call it:
 
 <details markdown>
 <summary>&emsp;&emsp;&emsp;&emsp;Readable — ~40X less to read</summary>
@@ -292,26 +258,27 @@ Don't take that on faith — an AI was asked to rebuild this same logic without 
 &nbsp;
 
 <details markdown>
-<summary>Example — New Database</summary>
+<summary>You can also create new databases — no existing database needed</summary>
 
-<br>**No existing database?** Same idea, same governing logic — just describe the tables instead of pointing at a `.sqlite` file (allow 8-10 mins):
+<br>Describe the tables and the rules, and the AI builds the schema and the logic together:
 
 ```
-Create basic_demo_new (no existing database) with:
-    Customer: name, balance, credit_limit
-    Order: customer, date_shipped, notes
-    Item: order, product, quantity, unit_price, amount
-    Product: name, unit_price
+Create a system with customers, orders, items and products.
 
-On Placing Orders, Check Credit
+Include a notes field for orders.
+
+On Placing Orders, Check Credit    
     1. The Customer's balance is less than the credit limit
     2. The Customer's balance is the sum of the Order amount_total where date_shipped is null
     3. The Order's amount_total is the sum of the Item amount
     4. The Item amount is the quantity * unit_price
     5. The Item unit_price is copied from the Product unit_price
+
+Use case: App Integration
+    1. Publish the Order to Kafka topic 'order_shipping' when the date_shipped becomes not None.
 ```
 
-Either path gets you the same thing: a working API and Admin App **plus the governing logic above** — not just a static schema. Same "Run it / Talk to your AI / Iterate" walkthrough from the Existing Database example above applies here too, once it's running.
+Notice this rule was described for *placing* an order — nothing was said about editing one. If you build this one, try the same "change the quantity, save" trigger from step 2 — it still catches it. You didn't write a rule for update; the system doesn't need a separate one. Design once, govern every path — insert, update, delete, however the change arrives.
 
 </details>
 
