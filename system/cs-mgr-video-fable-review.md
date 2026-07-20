@@ -78,3 +78,83 @@ Also worth naming the diff argument, because it's the auditor-facing version: ad
 Now the pushback: rebuildAll is becoming a strawman. The serious AI-only practice in 2026 isn't regenerate-from-prompt — it's agentic incremental editing: Claude Code surgically modifies the procedural codebase and runs the test suite. If you aim your critique at rebuildAll, a sharp reviewer says "nobody does that" and you've spent credibility on a dead position. The good news is your README's two-branch structure already handles this — the "alter the generated code" branch is the incremental case, and it's the stronger fight: incremental edits to procedural logic mean re-checking every path and re-deriving order, by hand or by an AI that pattern-matches dependencies rather than computes them. And against "but the test suite catches regressions": your own A/B result is the rebuttal — the reparenting bugs were found only by specifically testing that path. Tests sample; the commit-point engine guarantees.
 
 Warrants a mention? In the CIO-facing writing, yes — one tight paragraph, framed against incremental agentic editing with rebuildAll as the lesser included case. In the video, no. Section 2's notes already made that call correctly: it's verify-at-your-own-pace material, and the felt demo of the alternative — one sentence, one new rule, nothing retested — is the argument, shown instead of said.
+
+<br>
+
+## Independent fresh-context review (separate Fable pass, no other session context)
+
+Ran a second, independent Fable review — deliberately given only the strategy
+doc and script, no other session context or CIO-facing materials — asked for a
+first-read critique of the script alone: tone calibration, whether the
+three-story escalation actually builds, whether withholding "governance"
+until late works rhetorically, and whether anything over-proves itself.
+
+### Findings
+
+1. **"Governed" leaked early, in section 3a.** The script's own rule (never
+   say "governance" until the rule-file turn, so the word lands as earned)
+   was broken by "requirements in, a **governed** system out" — two
+   sections before the word's intended debut. This undercut the later
+   stage direction, which explicitly calls that moment "a callback... not
+   a new claim" — it can't be a callback if the word already appeared.
+
+2. **Section 5's "not just claimed" was a defensive wobble.** Argues
+   against a skeptic who hasn't spoken yet, out of place in a section
+   designed to be checklist-paced and unadorned. Related: "Read, Trust,
+   Maintain is the core of governance" asserts a category equation as
+   already proven, when the video only ever shows instances of it — a
+   fresh viewer has no particular reason to accept it as settled.
+
+3. **The 3b→3c transition (Surtax → CLVS) risked reading as anticlimax.**
+   The escalation is deliberately astonishing→credible, a considered
+   comedown per the strategy doc — but nothing in the original narration
+   marked that shift, so a first-time viewer could feel the energy drop
+   without registering it as intentional.
+
+### What held up
+
+Section 1's concrete, adjective-free register ("the kind that only show up
+when a customer's order gets reassigned to someone else"); section 2's "no
+second door" as a strong stand-in for the withheld word; the 3a→3b
+escalation itself; section 6's restrained close. Overall verdict before
+fixes: "structurally sound, escalation mostly works, tone is calibrated
+almost everywhere."
+
+### Fixes applied (to cs-mgr-video-script.md, this session)
+
+1. Section 3a: `"a governed system out"` → `"a working system out"` —
+   "governed" now first appears at the intended rule-file turn.
+2. Section 5: `"is the core of governance — and this is proof it's fully
+   addressed, not just claimed"` → `"is the core of governance. The rest
+   of the platform is built around it."` — removes the defensive rebuttal,
+   restates the relationship as a plain claim.
+3. Section 3c: added `"No magic left in this one — just a system meeting
+   the world as it actually is,"` as an opening frame — marks the
+   astonishing→credible shift as deliberate, not a flat drop.
+
+### Relationship to the review above
+
+This pass didn't have access to the Sierra pitch, Gov By Arch, or the CIO
+materials referenced above, so it caught none of the fact-check items (the
+8-figure catch's placement, the "nine lines" verification, the one-day vs.
+two-day discrepancy). Its value was narrower and different: a genuinely
+cold read of the script's internal discipline — whether it obeys its own
+stated rules about vocabulary and restraint — which is easy to lose track
+of as the person who wrote the strategy doc. Both passes should probably
+be checked before recording: this one for internal consistency, the
+richer session above for factual grounding and the missing proof sentence
+in 3c.
+
+### Follow-up: 3c proof sentence added, duration left as an open blocker
+
+Applied the missing punchline to `cs-mgr-video-script.md` section 3c: the
+CLVS story now closes on "the governed version caught a compliance
+exposure in the eight figures that they'd missed," instead of ending on
+atmosphere. Left the "built in TIME" duration claim out of the script
+entirely — the one-day (Sierra pitch) vs. two-day (Gov By Arch) conflict
+is a live discrepancy in published, external-facing materials, not
+something to resolve by picking one in the video script. Added an explicit
+"before recording" warning in the script itself so the gap doesn't get
+silently filled in during a later editing pass. **Open item, not yet
+resolved:** reconcile the two published sources to a single number before
+the video (or any future script revision) speaks a duration for CLVS.

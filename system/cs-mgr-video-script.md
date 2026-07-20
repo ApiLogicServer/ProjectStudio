@@ -70,7 +70,7 @@ highlight reel.
 
 | SHOW | SAY |
 |---|---|
-| Allocation demo running — cascade allocation of costs to departments/GL. Show the prompt or requirements briefly, then the running result. | "Here's a system type you already know: allocating costs across departments and GL accounts. Built the same way — requirements in, a governed system out. Nothing exotic about the business problem. What's different is how it got built." |
+| Allocation demo running — cascade allocation of costs to departments/GL. Show the prompt or requirements briefly, then the running result. | "Here's a system type you already know: allocating costs across departments and GL accounts. Built the same way — requirements in, a working system out. Nothing exotic about the business problem. What's different is how it got built." |
 
 ### 3b. Surtax — straight from the regulation (3:15–4:15)
 
@@ -82,7 +82,13 @@ highlight reel.
 
 | SHOW | SAY |
 |---|---|
-| CLVS system — show it working against an existing database schema, and a partner XML message being mapped in. | "And this one starts from an existing database — the kind you already have, not a clean slate — with a partner sending data in their own XML format, not ours. This is what it looks like when it meets a system you didn't get to design." |
+| CLVS system — show it working against an existing database schema, and a partner XML message being mapped in. | "No magic left in this one — just a system meeting the world as it actually is. A partner sends data in their own XML format, not ours — mapped straight in, against an existing database, the kind you already have, not a clean slate. A team had been building this the conventional way, for months. The governed version caught a compliance exposure in the eight figures that they'd missed." |
+
+**⚠️ Before recording:** the duration claim ("built in TIME") is a live
+discrepancy across published materials — Sierra pitch says one day, the Gov
+By Arch article says two days. Do not speak a number in this section until
+that's resolved and one source is corrected to match the other. As
+scripted above, no duration is spoken — keep it that way until fixed.
 
 **Why this order:** Allocation earns trust with something familiar before
 asking the viewer to process something novel (Surtax). CLVS closes the
@@ -111,7 +117,7 @@ just watched, not a new claim.
 
 | SHOW | SAY |
 |---|---|
-| Fast cuts — a few seconds each — across: Kafka/EAI integration, MCP discovery, AI Rules, a custom UI, and a generated health-check report. Checklist pace, not demo pace — nothing here gets its own explanation. | "Read, Trust, Maintain is the core of governance — and this is proof it's fully addressed, not just claimed. Enterprise integration. AI agents can find and query it through MCP. Custom UIs built safely against the same governed API. And reports generated from the running system, so a compliance reviewer can check the work in minutes, not by reading code." |
+| Fast cuts — a few seconds each — across: Kafka/EAI integration, MCP discovery, AI Rules, a custom UI, and a generated health-check report. Checklist pace, not demo pace — nothing here gets its own explanation. | "Read, Trust, Maintain is the core of governance. The rest of the platform is built around it. Enterprise integration. AI agents can find and query it through MCP. Custom UIs built safely against the same governed API. And reports generated from the running system, so a compliance reviewer can check the work in minutes, not by reading code." |
 
 **Deliberately excluded from the video, README-only:** the two-funnels
 architecture diagram, and any detail on what the three governance reports
